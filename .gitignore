@@ -52,3 +52,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+##Django specific stuff
+Settings/secret_key.py
+*.sqlite3

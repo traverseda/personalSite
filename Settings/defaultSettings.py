@@ -16,9 +16,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4d7f7$-w%-*mkd-trm8@v%6q0$!2&qo9byuzslbr2xwhe_wfv+'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -48,9 +45,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'billing.urls'
+ROOT_URLCONF = 'Settings.urls'
 
-WSGI_APPLICATION = 'billing.wsgi.application'
+WSGI_APPLICATION = 'Settings.wsgi.application'
 
 
 # Database
