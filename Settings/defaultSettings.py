@@ -100,12 +100,12 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
             },
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': '/path/to/your/file.log',
-            'formatter': 'simple'
-            },
+#        'file': {
+#            'level': 'DEBUG',
+#            'class': 'logging.FileHandler',
+#            'filename': '/path/to/your/file.log',
+#            'formatter': 'simple'
+#            },
         },
     'loggers': {
         'django': {
