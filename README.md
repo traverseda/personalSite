@@ -1,0 +1,1 @@
+The code running Alex's personal site, someday. With a focus on being fun to write, having good system architecture (cool url's don't change, everything should be modular with well defined access points, etc), and learning new stuff.

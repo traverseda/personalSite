@@ -56,3 +56,6 @@ target/
 ##Django specific stuff
 Settings/secret_key.py
 *.sqlite3
+
+#Hidden files
+.*

@@ -7,19 +7,19 @@ from django.core.cache import cache
 import markdown2
 
 
-def (text, strip=True):
+def markdownify(text, strip=True):
     extensions = [
         "footnotes",
         "code-friendly",
         "fenced-code-blocks",
         "smarty-pants",
-        "tables"
+        "tables",
+        "cuddled-lists"
     ]
-    if strip=True:
-        return markdown2.markdown(text,extras=extensions)
-    if strip=False:
-        return markdown2.markdown(text,extras=extensions)
-
+    if strip==True:
+        return markdown2.markdown(text,extras=extensions, safe_mode="escape")
+    if strip==False:
+        return markdown2.markdown(text,extras=extensions, safe_mode=False)
 
 class abstractMetaData(models.Model):
     modified=models.DateTimeField(auto_now=True, editable=False)
@@ -42,6 +42,7 @@ class blogPost(abstractMetaData):
     ##This here renders the body. It also does it's best to cache it.
     ##We need to be careful to unset it whenever it's modified. So basically on any save.
     def renderedBody(self):
+        return(markdownify(self.body))
         renderedBody = cache.get("blogPost {pk} rendered body".format(pk=self.pk), None)
         if not renderedBody:
             cache.set("blogPost {pk} rendered body".format(pk=self.pk), 'Initial value')
