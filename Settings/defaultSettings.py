@@ -105,21 +105,29 @@ PIPELINE_COMPILERS = (
 )
 
 PIPELINE_CSS = {
-    'materialize': {
+    'bootflat': {
         'source_filenames': (
-          'materialize-src/sass/materialize.scss',
-          'materialize-custom.scss',
+         'bootstrap/css/bootstrap.css',
+         #bootflat 
+         'bootflat/css/bootflat.css',
+         #custom
+         'custom.css',
         ),
-        'output_filename': 'css/material.css',
+        'output_filename': 'css/bootflat.min.css',
     },
 }
 PIPELINE_JS = {
-    'materialize': {
+    'bootflat': {
         'source_filenames': (
-            'materialize-src/js/bin/materialize.js',
-            'materialize-init.js',
+            #bootstrap
+            'bootstrap/js/bootstrap.js',
+            #bootflat
+            'bootflat/js/icheck.min.js',
+            'bootflat/js/jquery.fs.selecter.min.js',
+            'bootflat/js/jquery.fs.stepper.min.js',
+            '',
         ),
-        'output_filename': 'js/material.js',
+        'output_filename': 'js/all.min.js',
     }
 }
 
